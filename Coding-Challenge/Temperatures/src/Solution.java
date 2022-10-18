@@ -13,8 +13,7 @@ class Solution {
         for (int i = 0; i < n; i++) {
           int t = in.nextInt(); // a temperature expressed as an integer ranging from -273 to 5526
           if(i==0){ansTemp = t;
-            }else{
-              ansTemp = Math.abs(ansTemp) > Math.abs(t) ? t:  Math.abs(ansTemp) == Math.abs(t) && ansTemp < t? t : ansTemp;
+            }else{ ansTemp = Math.abs(ansTemp) > Math.abs(t) ? t:  Math.abs(ansTemp) == Math.abs(t) && ansTemp < t? t : ansTemp;
             }
           };
         System.out.println(ansTemp);
