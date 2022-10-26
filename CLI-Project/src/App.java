@@ -10,7 +10,7 @@ public class App {
         boolean flag =false;
 
         System.out.println("========================================");
-        System.out.println("==         Monster Hunter Rise        ==");
+        System.out.println("==           Monster Hunter           ==");
         System.out.println("----------------------------------------");
         System.out.print("Enter your name: ");
         String playerName=in.nextLine();
@@ -21,9 +21,9 @@ public class App {
 
         do{
             System.out.println("----------------------------------------");
-            System.out.println(" 1) ★★★★★★★: Thunder Serpent Narwa");
-            System.out.println(" 2) ★★★★   : Zinogre");
-            System.out.println(" 3) ★      : Felyne");
+            System.out.println(" 1) ★★★★★★★ : Thunder Serpent Narwa");
+            System.out.println(" 2) ★★★★    : Zinogre");
+            System.out.println(" 3) ★       : Felyne");
             System.out.println(" 4) Back to the start.");
             System.out.println("---------------------------------------");
 

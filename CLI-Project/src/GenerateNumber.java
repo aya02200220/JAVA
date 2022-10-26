@@ -34,15 +34,15 @@ public class GenerateNumber {
     // System.out.println("*The number must not be duplicated.");
 
     while(true){
-      // Set set = new HashSet();
       List<Integer> playerNumber = new ArrayList<>();
       try {
           System.out.print("Enter Number here: ");
-          int number=in.nextInt();
+          // int number=in.nextInt();
+          String str = in.nextLine();
 
-          if(String.valueOf(number).length()==4){
+          if(String.valueOf(str).length()==4){
             for(int k=0;k<4;k++){
-              String sNumber = String.valueOf(number);
+              String sNumber = String.valueOf(str);
 
               // Check duplicate number.
               int a = Integer.parseInt(String.valueOf(sNumber.charAt(k)));
@@ -61,6 +61,59 @@ public class GenerateNumber {
           // break;
         } catch (InputMismatchException e) {
           in.next();
+          System.out.println("You entered Strings. Please enter numbers.");
+        } catch (NumberFormatException e) {
+          // in.next();
+          System.out.println("You entered Strings. Please enter numbers.");
+        }catch(IOException e){
+          // in.next();
+          System.out.println("Please enter 4 digits number with no duplicate.");
+        }
+      }
+  }
+
+  //////////
+
+  // Players Number
+  public ArrayList<Integer> getPNumbers2(){
+
+    String brLine= "=======================================";
+    // System.out.println(brLine);
+    // System.out.println("Choose and enter 4 digit numbers.(From 0 to 9)");
+    // System.out.println("*The number must not be duplicated.");
+
+    while(true){
+      List<Integer> playerNumber = new ArrayList<>();
+      try {
+          System.out.print("Enter Number here: ");
+          // int number=in.nextInt();
+          String str = in.nextLine();
+
+          if(String.valueOf(str).length()==4){
+            for(int k=0;k<4;k++){
+              String sNumber = String.valueOf(str);
+
+              // Check duplicate number.
+              int a = Integer.parseInt(String.valueOf(sNumber.charAt(k)));
+              playerNumber.add(a);
+              // if(playerNumber.indexOf(a)<0){
+
+              //   playerNumber.add(a);
+              //   // If there is duplicate number.
+              // }else{throw new IOException();}
+            }
+
+            System.out.println(playerNumber);
+            return (ArrayList<Integer>) playerNumber;
+
+          }else{throw new IOException();
+          }
+          // break;
+        } catch (InputMismatchException e) {
+          in.next();
+          System.out.println("You entered Strings. Please enter numbers.");
+        } catch (NumberFormatException e) {
+          // in.next();
           System.out.println("You entered Strings. Please enter numbers.");
         }catch(IOException e){
           // in.next();

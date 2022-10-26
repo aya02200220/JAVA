@@ -4,7 +4,7 @@ public class debug {
   
   char selectedNumber='1';
   GenerateNumber f =new GenerateNumber();
-  f.getPNumbers();
+  f.getPNumbers2();
 
   
 
