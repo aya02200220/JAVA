@@ -7,8 +7,8 @@ public class HitAndBlow {
   int level;
   String name;
 
-  int [][] attack={{10,7,3},{7,5,3},{6,3,1}};
-  String [] monsterName={"Thunder Serpent Narwa","Zinogre","Felyne"};
+  int [][] attack={{15,9,6},{10,7,5},{8,5,3}};
+  String [] monsterName={"Kubilay Cakmak","Zinogre","Felyne"};
   String brLine = "=======================================";
 
   public HitAndBlow(char selectedNumber,String name){
@@ -25,26 +25,49 @@ public class HitAndBlow {
     int count = 0;
 
     boolean flag=false;
+    Random rand = new Random();
+
     int level = Integer.parseInt(String.valueOf(selectedNumber));
     // Generate monster number.
     GenerateNumber n = new GenerateNumber();
+    Function function = new Function();
     List<Integer> monsterNumber=new ArrayList<>(n.getMNumbers());
     List<Integer> playerNumber=new ArrayList<>();
+    function.displayString("!!!!!!!!!!!!!");
+    System.out.println();
+    function.displayString(monsterName[level-1]+" is appeared!!!");
+    System.out.println();
+    function.sleep2();
+    function.displayString("Guess a 4 digit number to defeat them!");
+    System.out.println();
+    // System.out.println(monsterNumber);
+    System.out.println();
+    function.sleep2();
 
-    System.out.println("--monsters number--");
-    System.out.println(monsterNumber);
 
     while(hitPoint>0 && flag==false){
       count++;
       System.out.println(brLine);
-      System.out.println("    ---------- Attempt " + count +"----------");
-      System.out.println(name+"'s attack! ");
+      function.sleep2();
+      System.out.println("    ---------- Attempt " + count +" ----------");
+      function.displayString(name+"'s attack! ");
+      System.out.println();
       playerNumber=n.getPNumbers2();
+      // System.out.println(playerNumber);
+      System.out.println();
+      function.sleep2();
 
       if(monsterNumber.equals(playerNumber)){
+        System.out.println();
+        function.displayString("CRITICAL HIT !!!!!!!!!!!!!!");
+        System.out.println();
+        System.out.println();
         System.out.println("🏆**************************************************🏆");
-        System.out.println("    Quest complete!!!! - " + monsterName[level-1]+" -");
+        System.out.println("               QUEST COMPLETE !!! ");
+        System.out.println();
+        System.out.println("               - "+ monsterName[level-1]+" -");
         System.out.println("🏆**************************************************🏆");
+        System.out.println();
         flag=true;
 
       }else{
@@ -63,17 +86,67 @@ public class HitAndBlow {
           }
 
         }
+        prevHit=hit;
+        prevBlow=blow;
+
+        function.displayString("hit: "+hit+  " / blow:  "+blow);
+        function.sleep4();
+        System.out.println();
+
+        prevHit=0;
+        prevBlow=0;
+        int ran =rand.nextInt(3);
+        int damage=attack[level-1][ran];
+        hitPoint-=damage;
+        if(hitPoint<=0)hitPoint=0;
+        System.out.println("---------------------------------------");
+        function.sleep3();
+        function.displayString(monsterName[level-1]+"'s Attack!!");
+        System.out.println();
+        function.sleep3();
+        System.out.println();
+        function.displayString("You got [ "+ damage + " ] damage!");
+        System.out.println();
+        function.sleep2();
+        function.displayDamage(hitPoint);
+        function.sleep3();
 
       }
-      
-      System.out.println("hit: "+hit+  " / blow:  "+blow);
-      
 
-      prevHit=hit;
-      prevBlow=blow;
-
-      prevHit=0;
-      prevBlow=0;
+        if(hitPoint==0){
+          System.out.println();
+          function.displayString("Your are dead ......💀");
+          System.out.println();
+          System.out.println();
+          System.out.println("---------------- Result ---------------");
+          function.displayString("The answer was: "+monsterNumber);
+          System.out.println();
+          function.displayString("Target    : "+monsterName[level-1]);
+          System.out.println();
+          function.displayString("Attempt   : "+count);
+          System.out.println();
+          function.displayString("Remain HP : "+hitPoint);
+          System.out.println();
+          System.out.println();
+          function.displayString("Try again・・・・・");
+          System.out.println();
+          System.out.println();
+        }else if(flag==true){
+          function.displayString("You defeated "+monsterName[level-1]+" !");
+          System.out.println();
+          function.displayString("Congratulation🎉");
+          System.out.println();
+          System.out.println("---------------- Result ---------------");
+          function.displayString("Target    : "+monsterName[level-1]);
+          System.out.println();
+          function.displayString("Attempt   : "+count);
+          System.out.println();
+          function.displayString("Remain HP : "+hitPoint);
+          System.out.println();
+          System.out.println();
+          function.displayString("Do you want to go another Quest?");
+          System.out.println();
+        }
 
     }//While loop
     /////

@@ -4,45 +4,56 @@ import java.util.*;
 public class App {
     public static void main(String[] args) throws Exception {
 
+        Function function = new Function();
         Scanner in = new Scanner(System.in);
         char selectedNumber='\0';
+        String checkSelectedNumber="";
         int monsterLevel=0;
         boolean flag =false;
 
-        System.out.println("========================================");
-        System.out.println("==           Monster Hunter           ==");
-        System.out.println("----------------------------------------");
-        System.out.print("Enter your name: ");
+        System.out.println("========================================================");
+        System.out.println("==                    Monster Hunter                  ==");
+        System.out.println("--------------------------------------------------------");
+        function.displayString("Welcome!!");
+        System.out.println();
+        function.displayString("Please enter your name: ");
         String playerName=in.nextLine();
         System.out.println();
         System.out.println("=================================================");
-        System.out.println("Welcome " + playerName + " !");
-        System.out.println("Ready to hunt monsters?");
+        function.displayString("Hi " + playerName + " !");
+        System.out.println();
+        function.displayString("Ready to hunt monsters?");
+        System.out.println();
+        System.out.println();
+        function.sleep2();
 
         do{
-            System.out.println("----------------------------------------");
-            System.out.println(" 1) ★★★★★★★ : Thunder Serpent Narwa");
+            System.out.println("■------------ QUEST LIST -------------■");
+            function.sleep3();
+            System.out.println(" 1) ★★★★★★★ : Kubilay Cakmak");
+            function.sleep3();
             System.out.println(" 2) ★★★★    : Zinogre");
+            function.sleep3();
             System.out.println(" 3) ★       : Felyne");
+            function.sleep3();
             System.out.println(" 4) Back to the start.");
-            System.out.println("---------------------------------------");
-
-
+            function.sleep3();
+            System.out.println("■-------------------------------------■");
+            function.sleep3();
 
                 try{
-                    System.out.print("- Select a quest number! : ");
-                    selectedNumber = in.next().charAt(0);
+                    function.displayString("- Select a quest number! : ");
+                    checkSelectedNumber = in.nextLine();
+                    selectedNumber = checkSelectedNumber.charAt(0);
 
-                    if(String.valueOf(selectedNumber).length()>1){
-                        throw new IOException();
+                    if(String.valueOf(checkSelectedNumber).length()>1){
+                        selectedNumber='5';
                     }
                     System.out.println();
 
                 }catch(InputMismatchException e){
                     in.next();
-                    System.out.println("Enter an integer.");
-                }
-
+                    System.out.println("Enter an integer.");}
 
             switch (selectedNumber) {
                 case '1':
@@ -57,16 +68,19 @@ public class App {
                     break;
                 default:
                     System.out.println("========================================");
-                    System.out.println("Enter a number 1 to 4.");
+                    function.displayString("Enter a number 1 to 4.");
+                    System.out.println();
                     System.out.println();
                     break;
             }
 
         }while(selectedNumber !=4 && flag==false); //&& flag==false
 
-        System.out.println("========================================");
-        System.out.println("Thank you for playing!!");
-
+        System.out.println("=================================================");
+        function.displayString("Thank you for playing!!");
+        System.out.println();
+        System.out.println("=================================================");
+        System.out.println();
     }
 }
 

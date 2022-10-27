@@ -103,7 +103,6 @@ public class GenerateNumber {
               // }else{throw new IOException();}
             }
 
-            System.out.println(playerNumber);
             return (ArrayList<Integer>) playerNumber;
 
           }else{throw new IOException();
