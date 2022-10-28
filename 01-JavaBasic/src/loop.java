@@ -15,7 +15,7 @@ public class loop {
     // Scanner scanner= new Scanner(System.in);
 
     // while(true){
-    //   System.out.println("Ennter a number: ");
+    //   System.out.println("Enter a number: ");
     //   step= scanner.nextInt();
 
     //   if(step===5){

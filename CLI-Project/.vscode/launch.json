@@ -6,6 +6,20 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Launch Debug",
+      "request": "launch",
+      "mainClass": "Debug",
+      "projectName": "CLI-Project_8f0dec8f"
+    },
+    {
+      "type": "java",
+      "name": "Launch main",
+      "request": "launch",
+      "mainClass": "main",
+      "projectName": "CLI-Project_8f0dec8f"
+    },
+    {
+      "type": "java",
       "name": "Launch Current File",
       "request": "launch",
       "mainClass": "${file}"

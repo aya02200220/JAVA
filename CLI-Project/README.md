@@ -1,18 +1,16 @@
-## Getting Started
+## About
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Hit and Blow (also known as Bulls and Cows).
+It is a classic code-breaking game for two players.
+But in this game, you will fight with different levels of Monsters you selected.
 
-## Folder Structure
+## Rules
 
-The workspace contains two folders by default, where:
+While a basic rules are taking turns guessing each other's number and the first one to hit the target wins, in this game, only one player guesses a monster's number which is randomly generated.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+At the start, you will be given 100 HitPoint.
+Every turn after you enter a wrong number, you are attacked by the monster and receive random damage depending on the monster's level.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+-`WIN ` You win when you hit the target before your HP gets 0. -`LOSE` When your HP gets 0, your game is over.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+> If you were luckily keep having the lowest damage, you will have turns a lot. But if not, you don't even have 10 turns if you choose the highest level.

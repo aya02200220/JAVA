@@ -1,48 +1,48 @@
 import java.io.*;
 import java.util.*;
 
-public class App {
+public class main {
     public static void main(String[] args) throws Exception {
 
         Function function = new Function();
+        StoryLine storyLine=new StoryLine();
         Scanner in = new Scanner(System.in);
         char selectedNumber='\0';
         String checkSelectedNumber="";
-        int monsterLevel=0;
         boolean flag =false;
 
-        System.out.println("========================================================");
-        System.out.println("==                    Monster Hunter                  ==");
-        System.out.println("--------------------------------------------------------");
-        function.displayString("Welcome!!");
         System.out.println();
-        function.displayString("Please enter your name: ");
+        System.out.println("========================================================================");
+        System.out.println("■                    Hit and Blow  ❌  Monster Hunter                  ■");
+        System.out.println("------------------------------------------------------------------------");
+        storyLine.explanationRules();
+
+        function.displayString("Please enter your name: ",40);
         String playerName=in.nextLine();
         System.out.println();
         System.out.println("=================================================");
-        function.displayString("Hi " + playerName + " !");
+        function.displayString("Welcome " + playerName + " !",40);
         System.out.println();
-        function.displayString("Ready to hunt monsters?");
+        function.displayString("Ready to hunt monsters?\n",40);
         System.out.println();
-        System.out.println();
-        function.sleep2();
+        function.sleep(500);
 
         do{
             System.out.println("■------------ QUEST LIST -------------■");
-            function.sleep3();
+            function.sleep(200);
             System.out.println(" 1) ★★★★★★★★ : Kubilay Cakmak");
-            function.sleep3();
+            function.sleep(200);
             System.out.println(" 2) ★★★★     : Zinogre");
-            function.sleep3();
+            function.sleep(200);
             System.out.println(" 3) ★        : Felyne");
-            function.sleep3();
+            function.sleep(200);
             System.out.println(" 4) Back to the start.");
-            function.sleep3();
+            function.sleep(200);
             System.out.println("■-------------------------------------■");
-            function.sleep3();
+            function.sleep(200);
 
                 try{
-                    function.displayString("- Select a quest number! : ");
+                    function.displayString("- Select a quest number : ",40);
                     checkSelectedNumber = in.nextLine();
                     selectedNumber = checkSelectedNumber.charAt(0);
 
@@ -68,19 +68,14 @@ public class App {
                     break;
                 default:
                     System.out.println("========================================");
-                    function.displayString("Enter a number 1 to 4.");
-                    System.out.println();
+                    function.displayString("Enter a number 1 to 4.\n",40);
                     System.out.println();
                     break;
             }
 
-        }while(selectedNumber !=4 && flag==false); //&& flag==false
+        }while(selectedNumber !=4 && flag==false);
 
-        System.out.println("=================================================");
-        function.displayString("Thank you for playing!!");
-        System.out.println();
-        System.out.println("=================================================");
-        System.out.println();
+        storyLine.exitGame();
     }
 }
 

@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class App {
@@ -14,7 +14,7 @@ public class App {
 
     List<String> list2 = new ArrayList<>(10);
     String fillArg="Hello";
-    Arrays.fill(list2,fillArg);
+    Collections.fill(list2,fillArg);
     
     List<String> list = new ArrayList<>();
 
