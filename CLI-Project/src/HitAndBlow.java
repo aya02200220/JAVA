@@ -4,14 +4,16 @@ public class HitAndBlow {
   
   char selectedNumber;
   int level;
+  int modeSelect;
   String pName;
 
   int [][] attack={{15,9,6},{10,7,5},{8,5,3}};
   String [] monsterName={"Kubilay Cakmak","Zinogre","Felyne"};
 
-  public HitAndBlow(char selectedNumber,String name){
+  public HitAndBlow(char selectedNumber,String name, int modeSelect){
     this.selectedNumber=selectedNumber;
     this.pName=name;
+    this.modeSelect=modeSelect;
   }
 
   public void battle(){
@@ -19,6 +21,7 @@ public class HitAndBlow {
     int hit = 0;
     int blow = 0;
     int count = 0;
+    int mode;
 
     boolean isEnd=false;
     String listStr="";
@@ -61,7 +64,10 @@ public class HitAndBlow {
 
       // Player's turn to answer.-----------------------------------------
       System.out.println();
-      playerNumber=n.getPNumbers2();// Input players number.
+      // Input players number.
+      if(modeSelect==1){playerNumber=n.getPNumbersEasy();
+      }else{playerNumber=n.getPNumbersStrict();}
+
       System.out.println();
       function.sleep(500);
 

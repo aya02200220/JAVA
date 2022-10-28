@@ -8,6 +8,8 @@ public class main {
         StoryLine storyLine=new StoryLine();
         Scanner in = new Scanner(System.in);
         char selectedNumber='\0';
+        int modeSelect=0;
+        String modeName;
         String checkSelectedNumber="";
         boolean flag =false;
 
@@ -27,7 +29,13 @@ public class main {
         System.out.println();
         function.sleep(500);
 
+        modeSelect=function.modeChange();
+        modeName=modeSelect==1?"EASY" : "STRICT";
+
         do{
+            System.out.println();
+            System.out.println("- "+ modeName  +" -");
+            function.sleep(200);
             System.out.println("■------------ QUEST LIST -------------■");
             function.sleep(200);
             System.out.println(" 1) ★★★★★★★★ : Kubilay Cakmak");
@@ -36,7 +44,11 @@ public class main {
             function.sleep(200);
             System.out.println(" 3) ★        : Felyne");
             function.sleep(200);
-            System.out.println(" 4) Back to the start.");
+            System.out.println("   - - - - - - - - - - - - - - - - -   ");
+            function.sleep(200);
+            System.out.println(" 4) Change the game mode.");
+            function.sleep(200);
+            System.out.println(" 5) End game.");
             function.sleep(200);
             System.out.println("■-------------------------------------■");
             function.sleep(200);
@@ -60,20 +72,24 @@ public class main {
                 case '2':
                 case '3':
                     // flag=true;
-                    HitAndBlow play =new HitAndBlow(selectedNumber,playerName);
+                    HitAndBlow play =new HitAndBlow(selectedNumber,playerName,modeSelect);
                     play.battle();
                     break;
                 case '4':
+                    modeSelect=function.modeChange();
+                    modeName=modeSelect==1?"EASY" : "STRICT";
+                    break;
+                case '5':
                     flag=true;
                     break;
                 default:
                     System.out.println("========================================");
-                    function.displayString("Enter a number 1 to 4.\n",40);
+                    function.displayString("Enter a number 1 to 5.\n",40);
                     System.out.println();
                     break;
             }
 
-        }while(selectedNumber !=4 && flag==false);
+        }while(selectedNumber !=5 && flag==false);
 
         storyLine.exitGame();
     }
