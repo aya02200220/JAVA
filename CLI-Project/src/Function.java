@@ -51,6 +51,8 @@ public class Function {
     sleep(200);
     System.out.println(" 2) Strict Mode");
     sleep(200);
+    System.out.println("- Duplicates number can be used to input in only Easy Mode.");
+    sleep(200);
     System.out.println("■----------------------------------■");
     sleep(200);
 

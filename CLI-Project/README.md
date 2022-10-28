@@ -14,7 +14,7 @@ the number consists of four different digits (0 to 9).
 -Duplicates number can be used to input in Easy Mode.
 -Duplicates number is not allow to input in Strict Mode.
 
-If your answer doesn't mach to the number, you are attacked by the monster and receive random damage depending on the monster's level.
+If your answer doesn't mach the secret number, you are attacked by the monster and receive random damage depending on the monster's level.
 
 4.) If the answer is not much to the secret number, you will be given a hint.
 

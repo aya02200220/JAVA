@@ -19,7 +19,7 @@ public class Results {
   }
   public void congratsResult(String mName){
     System.out.println();
-    function.displayString("👊 CRITICAL HIT 🔥 !!!!!!!!!!!!!!\n",40);
+    function.displayString(" 🔥 CRITICAL HIT 🔥 !!!!!!!!!!!!!!\n",40);
     System.out.println();
     function.sleep(200);
     System.out.println("🏆**************************************************🏆");
@@ -27,7 +27,7 @@ public class Results {
     System.out.println("               QUEST COMPLETE !!! ");
     function.sleep(200);
     System.out.println();
-    System.out.println("               - "+ mName+" -");
+    System.out.println("          - QUEST:  "+ mName+" -");
     function.sleep(200);
     System.out.println("🏆**************************************************🏆");
     System.out.println();

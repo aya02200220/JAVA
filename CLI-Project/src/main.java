@@ -34,9 +34,11 @@ public class main {
 
         do{
             System.out.println();
-            System.out.println("- "+ modeName  +" -");
+            System.out.println("- MODE: "+ modeName  +" -");
             function.sleep(200);
             System.out.println("■------------ QUEST LIST -------------■");
+            function.sleep(200);
+            System.out.println();
             function.sleep(200);
             System.out.println(" 1) ★★★★★★★★ : Kubilay Cakmak");
             function.sleep(200);
@@ -44,7 +46,7 @@ public class main {
             function.sleep(200);
             System.out.println(" 3) ★        : Felyne");
             function.sleep(200);
-            System.out.println("   - - - - - - - - - - - - - - - - -   ");
+            System.out.println("   --------------------------------   ");
             function.sleep(200);
             System.out.println(" 4) Change the game mode.");
             function.sleep(200);
