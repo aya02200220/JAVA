@@ -30,11 +30,11 @@ public class App {
         do{
             System.out.println("■------------ QUEST LIST -------------■");
             function.sleep3();
-            System.out.println(" 1) ★★★★★★★ : Kubilay Cakmak");
+            System.out.println(" 1) ★★★★★★★★ : Kubilay Cakmak");
             function.sleep3();
-            System.out.println(" 2) ★★★★    : Zinogre");
+            System.out.println(" 2) ★★★★     : Zinogre");
             function.sleep3();
-            System.out.println(" 3) ★       : Felyne");
+            System.out.println(" 3) ★        : Felyne");
             function.sleep3();
             System.out.println(" 4) Back to the start.");
             function.sleep3();

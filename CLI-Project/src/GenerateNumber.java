@@ -4,6 +4,8 @@ import java.util.*;
 // Generate Monster's number.
 public class GenerateNumber {
   Scanner in= new Scanner(System.in);
+  List<Integer> recordList = new ArrayList<>();
+
 
 
   public ArrayList<Integer> getMNumbers(){
@@ -25,52 +27,54 @@ public class GenerateNumber {
     return monsterNumber;
   }
 
-  // Players Number
-  public ArrayList<Integer> getPNumbers(){
+  // // Players Number（with no duplicates.）
+  // public ArrayList<Integer> getPNumbers(){
 
-    String brLine= "=======================================";
-    // System.out.println(brLine);
-    // System.out.println("Choose and enter 4 digit numbers.(From 0 to 9)");
-    // System.out.println("*The number must not be duplicated.");
+  //   String brLine= "=======================================";
+  //   // System.out.println(brLine);
+  //   // System.out.println("Choose and enter 4 digit numbers.(From 0 to 9)");
+  //   // System.out.println("*The number must not be duplicated.");
 
-    while(true){
-      List<Integer> playerNumber = new ArrayList<>();
-      try {
-          System.out.print("Enter Number here: ");
-          // int number=in.nextInt();
-          String str = in.nextLine();
+  //   while(true){
+  //     List<Integer> playerNumber = new ArrayList<>();
+  //     try {
+  //         System.out.print("Enter Number here: ");
+  //         // int number=in.nextInt();
+  //         String str = in.nextLine();
 
-          if(String.valueOf(str).length()==4){
-            for(int k=0;k<4;k++){
-              String sNumber = String.valueOf(str);
+  //         if(String.valueOf(str).length()==4){
+  //           for(int k=0;k<4;k++){
+  //             String sNumber = String.valueOf(str);
 
-              // Check duplicate number.
-              int a = Integer.parseInt(String.valueOf(sNumber.charAt(k)));
-              if(playerNumber.indexOf(a)<0){
+  //             // Check duplicate number.
+  //             int a = Integer.parseInt(String.valueOf(sNumber.charAt(k)));
+  //             if(playerNumber.indexOf(a)<0){
 
-                playerNumber.add(a);
-                // If there is duplicate number.
-              }else{throw new IOException();}
-            }
+  //               playerNumber.add(a);
+  //               // If there is duplicate number.
+  //             }else{throw new IOException();}
+  //           }
 
-            System.out.println(playerNumber);
-            return (ArrayList<Integer>) playerNumber;
+  //           System.out.println(playerNumber);
 
-          }else{throw new IOException();
-          }
-          // break;
-        } catch (InputMismatchException e) {
-          in.next();
-          System.out.println("You entered Strings. Please enter numbers.");
-        } catch (NumberFormatException e) {
-          // in.next();
-          System.out.println("You entered Strings. Please enter numbers.");
-        }catch(IOException e){
-          // in.next();
-          System.out.println("Please enter 4 digits number with no duplicate.");
-        }
-      }
-  }
+
+  //           return (ArrayList<Integer>) playerNumber;
+
+  //         }else{throw new IOException();
+  //         }
+  //         // break;
+  //       } catch (InputMismatchException e) {
+  //         in.next();
+  //         System.out.println("You entered Strings. Please enter numbers.");
+  //       } catch (NumberFormatException e) {
+  //         // in.next();
+  //         System.out.println("You entered Strings. Please enter numbers.");
+  //       }catch(IOException e){
+  //         // in.next();
+  //         System.out.println("Please enter 4 digits number.");
+  //       }
+  //     }
+  // }
 
   //////////
 
@@ -116,7 +120,7 @@ public class GenerateNumber {
           System.out.println("You entered Strings. Please enter numbers.");
         }catch(IOException e){
           // in.next();
-          System.out.println("Please enter 4 digits number with no duplicate.");
+          System.out.println("Please enter 4 digits number.");
         }
       }
   }

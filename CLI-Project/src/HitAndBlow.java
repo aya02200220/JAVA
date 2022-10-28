@@ -25,6 +25,7 @@ public class HitAndBlow {
     int count = 0;
 
     boolean flag=false;
+    String listStr="";
     Random rand = new Random();
 
     int level = Integer.parseInt(String.valueOf(selectedNumber));
@@ -33,14 +34,19 @@ public class HitAndBlow {
     Function function = new Function();
     List<Integer> monsterNumber=new ArrayList<>(n.getMNumbers());
     List<Integer> playerNumber=new ArrayList<>();
-    function.displayString("!!!!!!!!!!!!!");
-    System.out.println();
-    function.displayString(monsterName[level-1]+" is appeared!!!");
-    System.out.println();
+    List<String> recordList=new ArrayList<>();
+    recordList.add("\n   -------- Number Records --------");
+
+    function.displayString2("・\n");
+    function.displayString2("・\n");
+    function.displayString2("・\n");
+    function.displayString("!!!!!!!!!!!!!\n");
+    
+    function.sleep3();
+    function.displayString(monsterName[level-1]+" is appeared!!!\n");
     function.sleep2();
-    function.displayString("Guess a 4 digit number to defeat them!");
-    System.out.println();
-    // System.out.println(monsterNumber);
+    function.displayString("Guess a 4 digit number to defeat them!\n");
+    System.out.println(monsterNumber);
     System.out.println();
     function.sleep2();
 
@@ -50,7 +56,19 @@ public class HitAndBlow {
       System.out.println(brLine);
       function.sleep2();
       System.out.println("    ---------- Attempt " + count +" ----------");
-      function.displayString(name+"'s attack! ");
+      function.displayString(name+"'s attack! \n");
+      function.sleep2();
+
+      // Show previous record
+      if(recordList.size()>1){
+        for(int i= 0;i<recordList.size();i++){
+          if(i>0)System.out.print("   "+ i + ")");
+          System.out.println(recordList.get(i));
+          function.sleep4();
+        }
+      }
+
+      function.sleep2();
       System.out.println();
       playerNumber=n.getPNumbers2();
       // System.out.println(playerNumber);
@@ -59,8 +77,7 @@ public class HitAndBlow {
 
       if(monsterNumber.equals(playerNumber)){
         System.out.println();
-        function.displayString("CRITICAL HIT !!!!!!!!!!!!!!");
-        System.out.println();
+        function.displayString("CRITICAL HIT !!!!!!!!!!!!!!\n");
         System.out.println();
         System.out.println("🏆**************************************************🏆");
         System.out.println("               QUEST COMPLETE !!! ");
@@ -89,9 +106,17 @@ public class HitAndBlow {
         prevHit=hit;
         prevBlow=blow;
 
-        function.displayString("hit: "+hit+  " / blow:  "+blow);
+        function.displayString("hit: "+hit+  " / blow: "+blow+"\n");
+
+        // Store previous records.
+        listStr=playerNumber.size()<=10?listStr="   ":"  ";
+        for(int i= 0;i<playerNumber.size();i++){
+          listStr+=playerNumber.get(i);
+        }
+        listStr+=" | hit: "+hit+  " / blow:  "+blow;
+        recordList.add(listStr);
+
         function.sleep4();
-        System.out.println();
 
         prevHit=0;
         prevBlow=0;
@@ -101,12 +126,10 @@ public class HitAndBlow {
         if(hitPoint<=0)hitPoint=0;
         System.out.println("---------------------------------------");
         function.sleep3();
-        function.displayString(monsterName[level-1]+"'s Attack!!");
-        System.out.println();
+        function.displayString(monsterName[level-1]+"'s Attack!!\n");
         function.sleep3();
         System.out.println();
-        function.displayString("You got [ "+ damage + " ] damage!");
-        System.out.println();
+        function.displayString("You got [ "+ damage + " ] damage!\n");
         function.sleep2();
         function.displayDamage(hitPoint);
         function.sleep3();
@@ -115,37 +138,25 @@ public class HitAndBlow {
 
         if(hitPoint==0){
           System.out.println();
-          function.displayString("Your are dead ......💀");
-          System.out.println();
+          function.displayString("Your are dead ......💀\n");
           System.out.println();
           System.out.println("---------------- Result ---------------");
-          function.displayString("The answer was: "+monsterNumber);
+          function.displayString("The answer was: "+monsterNumber+"\n");
+          function.displayString("Target    : "+monsterName[level-1]+"\n");
+          function.displayString("Attempt   : "+count+"\n");
+          function.displayString("Remain HP : "+hitPoint+"\n");
           System.out.println();
-          function.displayString("Target    : "+monsterName[level-1]);
-          System.out.println();
-          function.displayString("Attempt   : "+count);
-          System.out.println();
-          function.displayString("Remain HP : "+hitPoint);
-          System.out.println();
-          System.out.println();
-          function.displayString("Try again・・・・・");
-          System.out.println();
+          function.displayString("Try again・・・・・\n");
           System.out.println();
         }else if(flag==true){
-          function.displayString("You defeated "+monsterName[level-1]+" !");
-          System.out.println();
-          function.displayString("Congratulation🎉");
-          System.out.println();
+          function.displayString("You defeated "+monsterName[level-1]+" !\n");
+          function.displayString("Congratulation🎉\n");
           System.out.println("---------------- Result ---------------");
-          function.displayString("Target    : "+monsterName[level-1]);
+          function.displayString("Target    : "+monsterName[level-1]+"\n");
+          function.displayString("Attempt   : "+count +"\n");
+          function.displayString("Remain HP : "+hitPoint +"\n");
           System.out.println();
-          function.displayString("Attempt   : "+count);
-          System.out.println();
-          function.displayString("Remain HP : "+hitPoint);
-          System.out.println();
-          System.out.println();
-          function.displayString("Do you want to go another Quest?");
-          System.out.println();
+          function.displayString("Do you want to go another Quest?\n");
         }
 
     }//While loop

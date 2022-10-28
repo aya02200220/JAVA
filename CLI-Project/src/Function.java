@@ -1,11 +1,10 @@
+import java.util.ArrayList;
 
 public class Function {
 
   public int HP;
+  ArrayList<Integer> list = new ArrayList<>();
 
-  // public DamageMeter(int HP){
-  //   this.HP=HP;
-  // }
 
   public void displayDamage(int HP){
     int remainHP = (HP/4);
@@ -52,6 +51,13 @@ public class Function {
         sleep4();
     }
   }
+  public void displayString2(String str){
+    for(int i=0; i<str.length(); i++) {
+        System.out.print(str.charAt(i));
+        sleep3();
+    }
+  }
+
  /////////
 }
 
