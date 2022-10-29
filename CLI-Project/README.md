@@ -16,7 +16,7 @@ the number consists of four different digits (0 to 9).
 
 If your answer doesn't mach the secret number, you are attacked by the monster and receive random damage depending on the monster's level.
 
-4.) If the answer is not much to the secret number, you will be given a hint.
+4.) If the answer is not match the secret number, you will be given a hint.
 
 - "Hits" are the matching digits on their right positions.
 - "Blows" are those on different positions.
