@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thmeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="/crate" method="POST">
+      <label for="fullName">Full Name:</label>
+      <br />
+      <input type="text" th:field="${formData.fullName}" />
+      <br />
+
+      <label for="age"></label><br />
+      <input type="number" th:field="${formData.age}" />
+      <br />
+
+      <label for="">Employed</label><br />
+      <input type="checkbox" th:field="${formData.Employed}" />
+      <br />
+
+      <label for="">Gender: </label><br />
+      <p>
+        Male: <input type="radio" th:value="Male" /> Female:<input
+          type="radio"
+        />
+      </p>
+    </form>
+  </body>
+</html>

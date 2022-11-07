@@ -145,7 +145,7 @@ public class EmployeeDAOMysqlimpl implements EmployeeDAO {
         e.printStackTrace();
       }
     }
-    return null;
+    return employee;
   }
 
   @Override
@@ -178,7 +178,7 @@ public class EmployeeDAOMysqlimpl implements EmployeeDAO {
         e.printStackTrace();
       }
     }
-    return null;
+    return employees;
   }
 
   ///////////////////////////////
